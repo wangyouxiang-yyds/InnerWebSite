@@ -109,8 +109,8 @@
                                     <a class="nav-link" href="{% url 'about' %}">關於我們</a></li>
                                 <li class="nav-item @@service {% if current_url == service_url %}active{% endif %}">
                                     <a class="nav-link" href="{% url 'fastlink' %}">表單</a></li>
-                                {#                                <li class="nav-item @@project {% if current_url == project_url %}active{% endif %}"><a#}
-                                {#                                        class="nav-link" href="{% url 'project' %}">榮獲獎項</a></li>#}
+                                <li class="nav-item @@project {% if current_url == project_url %}active{% endif %}"><a
+                                        class="nav-link" href="{% url 'award' %}">榮獲獎項</a></li>
                                 {#                                <li class="nav-item @@blogSidebar {% if current_url == blog_sidebar_url %}active{% endif %}">#}
                                 {#                                    <a class="nav-link" href="{% url 'blog_sidebar' %}">公告文章</a></li>#}
                                 {% comment %}

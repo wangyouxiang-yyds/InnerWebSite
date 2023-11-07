@@ -19,6 +19,7 @@ from django.urls import path
 from index.views import homepage
 from about.views import aboutView
 from fastlink.views import fastlinkView
+from award.views import awardView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +27,7 @@ urlpatterns = [
                   path('', homepage, name='index'),
                   path('about/', aboutView, name='about'),
                   path('fastlink/', fastlinkView, name='fastlink'),
+                  path('awarad/', awardView, name='award'),
                   path('admin/', admin.site.urls),
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
