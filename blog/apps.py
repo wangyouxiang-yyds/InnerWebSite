@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class AwardConfig(AppConfig):
+class BlogConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "award"
-    verbose_name = '榮獲獎項'
+    name = "blog"
+    verbose_name = '文章管理'
