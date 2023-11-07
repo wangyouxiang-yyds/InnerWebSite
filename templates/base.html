@@ -1,0 +1,319 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+
+    <!-- ** Basic Page Needs ** -->
+    <meta charset="utf-8">
+    <title>AGIT | GLOBAL</title>
+
+    <!-- ** Mobile Specific Metas ** -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Agency HTML Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="author" content="Themefisher">
+    <meta name="generator" content="Themefisher Html5 Agency Template v1.0">
+
+    <!-- theme meta -->
+    <meta name="theme-name" content="megakit"/>
+
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="{% static '/plugins/bootstrap/bootstrap.min.css' %}">
+    <!-- Icon Font Css -->
+    <link rel="stylesheet" href="{% static '/plugins/themify/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static '/plugins/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static '/plugins/magnific-popup/magnific-popup.css' %}">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="{% static '/plugins/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static '/plugins/slick/slick-theme.css' %}">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+    <!--Favicon網頁icon-->
+    <link rel="icon" href="{% static '/images/Agit-Logo.jpg' %}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    {% block cssarea %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+<!-- Header Start -->
+<header class="navigation">
+    <div class="header-top ">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-2 col-md-4">
+                    <div class="header-top-socials text-center text-lg-left text-md-left">
+
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-8 text-center text-lg-right text-md-right">
+                    <div class="header-top-info mb-2 mb-md-0">
+                        <a href="tel:049-2563888">聯絡我們 : <span>049-2563888</span></a>
+                        <a href="mailto:ex20@agit-global.com"><i class="fas fa-envelope mr-2"></i><span>ex20@agit-global.com</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg px-0 py-4">
+                        <a class="navbar-brand" href="{% url 'index' %}">
+                            {#                            AGIT GLOBAL, INC.<span>   </span>#}
+                            <img src="{% static 'images/AGIT LOGO-12.png' %}" alt="AGIT GLOBAL, INC. Logo" width="225px"
+                                 height="40px">
+                        </a>
+
+                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                                data-target="#navbarsExample09"
+                                aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fa fa-bars"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse text-center" id="navbarsExample09">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item {% if current_url == index_url %}active{% endif %} ">
+                                    <a class="nav-link" href="{% url 'index' %}">首頁</a>
+                                </li>
+                                {% comment %}
+                                <li class="nav-item dropdown @@about {% if current_url == about_url %}active{% endif %}">
+                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">關於我們 <i
+                                            class="fas fa-chevron-down small"></i></a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                                        <li><a class="dropdown-item @@company" href="{% url 'about' %}">關於公司</a>
+                                        </li>
+
+                    <li><a class="dropdown-item @@pricing" href="{% url 'pricing' %}">價錢諮詢</a></li>
+
+                    <li class="dropdown dropdown-submenu dropright">
+                      <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0301" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
+
+                      <ul class="dropdown-menu" aria-labelledby="dropdown0301">
+                        <li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
+                        <li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+{% endcomment %}
+                                <li class="nav-item @@about {% if current_url == about_url %}active{% endif %}">
+                                    <a class="nav-link" href="{% url 'about' %}">關於我們</a></li>
+                                <li class="nav-item @@service {% if current_url == service_url %}active{% endif %}">
+                                    <a class="nav-link" href="{% url 'fastlink' %}">表單</a></li>
+                                {#                                <li class="nav-item @@project {% if current_url == project_url %}active{% endif %}"><a#}
+                                {#                                        class="nav-link" href="{% url 'project' %}">榮獲獎項</a></li>#}
+                                {#                                <li class="nav-item @@blogSidebar {% if current_url == blog_sidebar_url %}active{% endif %}">#}
+                                {#                                    <a class="nav-link" href="{% url 'blog_sidebar' %}">公告文章</a></li>#}
+                                {% comment %}
+                <li class="nav-item dropdown @@blog">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i class="fas fa-chevron-down small"></i></a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                    <li><a class="dropdown-item @@blogGrid {% if current_url == blog_grid_url %}active{% endif %}" href="{% url 'blog_grid'%}">公告文章</a></li>
+                    <li><a class="dropdown-item @@blogSidebar {% if current_url == blog_sidebar_url %}active{% endif %}" href="{% url 'blog_sidebar'%}">公告文章有Sidebar</a></li>
+                    <li><a class="dropdown-item @@blogSingle" href="{% url 'blog_single'%}">文章內頁</a></li>
+
+                    <li class="dropdown dropdown-submenu dropleft">
+                      <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
+
+                      <ul class="dropdown-menu" aria-labelledby="dropdown0501">
+                        <li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
+                        <li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+{% endcomment %}
+                                {#                                <li class="nav-item @@contact {% if current_url == contact_url %}active{% endif %}"><a#}
+                                {#                                        class="nav-link" href="{% url 'contact' %}">聯絡我們</a></li>#}
+                            </ul>
+                            {% comment %}
+                            <div class="my-2 my-md-0 ml-lg-4 text-center">
+                                <a href={% url 'contact' %} class="btn btn-solid-border btn-round-full">Get a Quote</a>
+                            </div>
+{% endcomment %}
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    {% if announcement %}
+        <marquee class="container-fluid" bgcolor="white" hspace="30" scrollamount="20"
+                 style="font-family:微軟正黑體; color: black; font-size: 60px">{{ announcement.first }}</marquee>
+    {% endif %}
+</header>
+
+<!-- Header Close -->
+{# 首頁banner區域#}
+{% block Slider_Start %}
+{% endblock %}
+
+<!-- Section Intro Start -->
+{% block Section_Intro_Start %}
+{% endblock %}
+<!-- Section Intro END -->
+<!-- Section About Start -->
+{% block Section_About_Start %}
+{% endblock %}
+<!-- Section About End -->
+
+{% block pricing_contact_us %}
+{% endblock %}
+<!-- section Counter Start -->
+{% block Counter %}
+{% endblock %}
+<!-- section Counter End  -->
+<!--  Section Services Start -->
+{% block service %}
+{% endblock %}
+<!--  Section Services End -->
+
+<!-- Section Cta Start -->
+{% block Cta %}
+
+{% endblock %}
+<!--  Section Cta End-->
+<!-- Section Testimonial Start -->
+{% block client_say %}
+
+{% endblock %}
+<!-- Section Testimonial End -->
+{% block Testimonial %}
+
+
+
+{% endblock %}
+{#<section class="mt-70 position-relative">#}
+{#	<div class="container">#}
+{#		<div class="cta-block-2 bg-gray p-5 rounded border-1">#}
+{#			<div class="row justify-content-center align-items-center ">#}
+{#				<div class="col-lg-7">#}
+{#					<span class="text-color">For Every type business</span>#}
+{#					<h2 class="mt-2 mb-4 mb-lg-0">Entrust Your Project to Our Best Team of Professionals</h2>#}
+{#				</div>#}
+{#				<div class="col-lg-4">#}
+{#					<a href="contact.html" class="btn btn-main btn-round-full float-lg-right ">Contact Us</a>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#	</div>#}
+{#</section>#}
+
+
+<footer class="footer section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="widget">
+                    <h4 class="text-capitalize mb-4">公司</h4>
+
+                    <ul class="list-unstyled footer-menu lh-35">
+                        {#                        <li><a href="about.html">Terms & Conditions</a></li>#}
+                        {#                        <li><a href="about.html">Privacy Policy</a></li>#}
+                        {#                        <li><a href="cobtact.html">Support</a></li>#}
+                        {#                        <li><a href="cobtact.html">FAQ</a></li>#}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="widget">
+                    <h4 class="text-capitalize mb-4">快速連結</h4>
+
+                    <ul class="list-unstyled footer-menu lh-35">
+                        {#                        <li><a href={% url 'about' %}>關於我們</a></li>#}
+                        {#                        <li><a href={% url 'service' %}>服務</a></li>#}
+                        {#                        <li><a href={% url 'blog_grid' %}>文章</a></li>#}
+                        {#                        <li><a href={% url 'contact' %}>聯絡我們</a></li>#}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 mx-auto">
+                <div class="widget">
+                    <h4 class="text-capitalize mb-4">Subscribe Us</h4>
+                    <p>Subscribe to get latest news article and resources </p>
+
+                    <form action="#" class="sub-form">
+                        <input type="text" class="form-control mb-3" placeholder="Subscribe Now ...">
+                        <a href="#" class="btn btn-main btn-small">subscribe</a>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+                <div class="widget">
+                    <div class="logo mb-4">
+                        <h3>AGIT GLOBAL<span>Inc.</span></h3>
+                    </div>
+                    <h6><a href="mailto:ex20@agit-global.com">ex20@agit-global.com</a></h6>
+                    <a href="tel:+049-2563888 "><span class="text-color h4">049-2563888 </span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-btm pt-4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        Copyright &copy; 2023, Designed &amp; Developed by <a href="#">Alan</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-left text-lg-right">
+                    <ul class="list-inline footer-socials">
+                        {% comment %}
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f mr-2"></i>Facebook</a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter mr-2"></i>Twitter</a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-instagram-p mr-2 "></i>Instagram</a>
+                        </li>
+{% endcomment %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!--Scroll to top-->
+<div id="scroll-to-top" class="scroll-to-top">
+    <span class="icon fa fa-angle-up"></span>
+</div>
+
+
+<!--
+Essential Scripts
+=====================================-->
+<!-- Main jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4.3.1 -->
+<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+<!--  Magnific Popup-->
+<script src="{% static 'plugins/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+<!-- Slick Slider -->
+<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+<!-- Counterup -->
+<script src="{% static 'plugins/counterup/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'plugins/counterup/jquery.counterup.min.js' %}"></script>
+
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
+<script src="{% static 'plugins/google-map/map.js' %}" defer></script>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+
+</body>
+
+</html>
