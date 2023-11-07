@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'fastlink.apps.FastlinkConfig',
     'award',
+    'blog',
+    'contact',
 ]
 
 MIDDLEWARE = [

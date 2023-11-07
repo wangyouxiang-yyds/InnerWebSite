@@ -21,6 +21,7 @@ from about.views import aboutView
 from fastlink.views import fastlinkView
 from award.views import awardView
 from blog.views import blogView, blog_single_view
+from contact.views import contactView
 from django.conf import settings
 from django.conf.urls.static import static
 
