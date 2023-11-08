@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import *
-
+from index.models import *
 
 # Create your views here.
 
@@ -18,6 +18,7 @@ def aboutView(request):
     third_line = introduce_data.third_line
 
     quote = Quote.objects.all()
+    display = RunHorseLight.objects.first()
     return render(request, 'about.html', locals())
 
 

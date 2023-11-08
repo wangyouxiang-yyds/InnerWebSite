@@ -132,8 +132,8 @@
                   </ul>
                 </li>
 {% endcomment %}
-                                {#                                <li class="nav-item @@contact {% if current_url == contact_url %}active{% endif %}"><a#}
-                                {#                                        class="nav-link" href="{% url 'contact' %}">聯絡我們</a></li>#}
+                                <li class="nav-item @@contact {% if current_url == contact_url %}active{% endif %}">
+                                    <a class="nav-link" href="{% url 'contact' %}">聯絡我們</a></li>
                             </ul>
                             {% comment %}
                             <div class="my-2 my-md-0 ml-lg-4 text-center">
@@ -149,9 +149,9 @@
 
 
     </div>
-    {% if announcement %}
+    {% if display.display_or_not %}
         <marquee class="container-fluid" bgcolor="white" hspace="30" scrollamount="20"
-                 style="font-family:微軟正黑體; color: black; font-size: 60px">{{ announcement.first }}</marquee>
+                 style="font-family:微軟正黑體; color: black; font-size: 60px">{{ display.announcement }}</marquee>
     {% endif %}
 </header>
 

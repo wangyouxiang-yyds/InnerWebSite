@@ -26,13 +26,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-12 col-sm-12">
-				<form id="contact-form" class="contact__form" method="post" action="index.html">
+				<form id="contact-form" class="contact__form" method="post" action="">
+                    {% csrf_token %}
 					<h3 class="text-md mb-4">連絡表格</h3>
 					<div class="form-group">
 						<input name="name" type="text" class="form-control" placeholder="您的名字" required>
 					</div>
 					<div class="form-group">
-						<input name="email" type="email" class="form-control" placeholder="Email" required>
+						<input name="department" type="text" class="form-control" placeholder="部門" required>
+					</div>
+					<div class="form-group">
+						<input name="serial-number" type="text" class="form-control" placeholder="工號" required>
+					</div>
+                    <div class="form-group">
+						<input name="email" type="email" class="form-control" placeholder="電子信箱" required>
 					</div>
 					<div class="form-group-2 mb-4">
 						<textarea name="message" class="form-control" rows="4" placeholder="您的留言" required></textarea>
@@ -54,7 +61,7 @@
 							<i class="ti-email mr-3"></i>Email: it@agit-global.com
 						</li>
 						<li>
-							<i class="ti-mobile mr-3"></i>Phone:+886 0963982828
+							<i class="ti-mobile mr-3"></i>分機:281, 282, 283
 						</li>
 					</ul>
 {% comment %}

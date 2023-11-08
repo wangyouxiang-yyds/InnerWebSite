@@ -149,3 +149,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\','/')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# SMTP setting
+# ymlbanjvgmbvgsse應用程式密碼
+#
+# 設定寄信的 Google爬文一下照著做理論上不會錯
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # SMTP伺服器
+EMAIL_PORT = 587  # TLS通訊埠號
+EMAIL_USE_TLS = True  # 開啟TLS(傳輸層安全性)
+EMAIL_HOST_USER = 'ex07@agit-global.com'  # 寄件者電子郵件
+EMAIL_HOST_PASSWORD = 'zhmyzfnsatlhoecz'  # Gmail應用程式的密碼

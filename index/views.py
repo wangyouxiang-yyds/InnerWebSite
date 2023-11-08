@@ -8,6 +8,13 @@ def homepage(request):
     banner_second = HomeBanner2.objects.first()
     banner_third = HomeBanner3.objects.first()
     banner_fourth = HomeBanner4.objects.first()
+    display = RunHorseLight.objects.first()
     return render(request, 'index.html', locals())
+
+
+
+def baseView(request):
+
+    return render(request, 'base.html', locals())
 
 
