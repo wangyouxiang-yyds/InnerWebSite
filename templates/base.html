@@ -107,9 +107,9 @@
 {% endcomment %}
                                 <li class="nav-item @@about {% if current_url == about_url %}active{% endif %}">
                                     <a class="nav-link" href="{% url 'about' %}">關於我們</a></li>
-                                <li class="nav-item @@service {% if current_url == service_url %}active{% endif %}">
+                                <li class="nav-item @@service {% if current_url == fastlink_url %}active{% endif %}">
                                     <a class="nav-link" href="{% url 'fastlink' %}">表單</a></li>
-                                <li class="nav-item @@project {% if current_url == project_url %}active{% endif %}"><a
+                                <li class="nav-item @@project {% if current_url == award_url %}active{% endif %}"><a
                                         class="nav-link" href="{% url 'award' %}">榮獲獎項</a></li>
                                 <li class="nav-item @@blogSidebar {% if current_url == blog_sidebar_url %}active{% endif %}">
                                     <a class="nav-link" href="{% url 'blog-sidebar' %}">公告文章</a></li>
@@ -220,10 +220,10 @@
                     <h4 class="text-capitalize mb-4">公司</h4>
 
                     <ul class="list-unstyled footer-menu lh-35">
-                        {#                        <li><a href="about.html">Terms & Conditions</a></li>#}
-                        {#                        <li><a href="about.html">Privacy Policy</a></li>#}
-                        {#                        <li><a href="cobtact.html">Support</a></li>#}
-                        {#                        <li><a href="cobtact.html">FAQ</a></li>#}
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
             </div>
@@ -232,22 +232,23 @@
                     <h4 class="text-capitalize mb-4">快速連結</h4>
 
                     <ul class="list-unstyled footer-menu lh-35">
-                        {#                        <li><a href={% url 'about' %}>關於我們</a></li>#}
-                        {#                        <li><a href={% url 'service' %}>服務</a></li>#}
-                        {#                        <li><a href={% url 'blog_grid' %}>文章</a></li>#}
-                        {#                        <li><a href={% url 'contact' %}>聯絡我們</a></li>#}
+                        <li><a href={% url 'about' %}>關於我們</a></li>
+                        <li><a href={% url 'fastlink' %}>表單</a></li>
+                        <li><a href={% url 'blog-sidebar' %}>文章</a></li>
+                        <li><a href={% url 'contact' %}>聯絡我們</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6 mx-auto">
                 <div class="widget">
-                    <h4 class="text-capitalize mb-4">Subscribe Us</h4>
-                    <p>Subscribe to get latest news article and resources </p>
+                    <h4 class="text-capitalize mb-4">快速搜尋文章</h4>
+                    <p>依稀記得文章內容的資訊嗎?這邊可以幫你找到</p>
 
-                    <form action="#" class="sub-form">
-                        <input type="text" class="form-control mb-3" placeholder="Subscribe Now ...">
-                        <a href="#" class="btn btn-main btn-small">subscribe</a>
+                    <form action="{% url 'blog-sidebar' %}" class="sub-form" method="get">
+                        {% csrf_token %}
+                        <input type="text" class="form-control mb-3" placeholder="搜尋文章 ..." name="search">
+                        <button type="submit" class="btn btn-main btn-small">搜尋</button>
                     </form>
                 </div>
             </div>

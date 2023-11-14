@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.mail import EmailMessage
-
+from django.urls import reverse
 from .models import *
 
 
@@ -32,4 +32,8 @@ def contactView(request):
         send_mail = EmailMessage('來自' + department + name + '的意見', mail_body, email, ['it@agit-global.com'])
 
         send_mail.send()
+
+    current_url = request.path_info
+    contact_url = reverse('contact')
+
     return render(request, 'contact.html', locals())

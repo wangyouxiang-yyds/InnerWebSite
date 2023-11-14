@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from index.models import *
-
+from django.urls import reverse
 # Create your views here.
 
 
@@ -19,6 +19,11 @@ def aboutView(request):
 
     quote = Quote.objects.all()
     display = RunHorseLight.objects.first()
+
+
+
+    current_url = request.path_info
+    about_url = reverse('about')
     return render(request, 'about.html', locals())
 
 

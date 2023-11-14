@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import *
-
+from django.urls import reverse
 
 # Create your views here.
 
@@ -14,4 +14,7 @@ def fastlinkView(request):
         department_forms_by_category[category] = forms
 
     fast_url = common_link.objects.all().order_by('-pk')
+
+    current_url = request.path_info
+    fastlink_url = reverse('fastlink')
     return render(request, 'fastlink.html', locals())

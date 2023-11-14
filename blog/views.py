@@ -1,8 +1,8 @@
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from .models import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
-
+from django.urls import reverse
 # Create your views here.
 
 
@@ -10,6 +10,10 @@ def blogView(request):
     all_article = article.objects.all().order_by('-pk', 'create_date')
     banner = BlogBanner.objects.first()  # banner 圖片
     all_article_three = article.objects.all().order_by('-pk', 'create_date')[:3]
+    if 'search' in request.GET:
+        search = request.GET['search']
+        if len(search) > 0:
+            all_article = article.objects.filter(Q(title__icontains=search) | Q(content__icontains=search)).order_by('-pk', 'create_date')
 
     limit = 4
     page = request.GET.get('page', 1)
@@ -20,6 +24,9 @@ def blogView(request):
         all_article = paginator.page(1)
     except EmptyPage:
         all_article = paginator.page(paginator.num_pages)
+
+    current_url = request.path_info
+    blog_sidebar_url = reverse('blog-sidebar')
     return render(request, 'blog-sidebar.html', locals())
 
 
@@ -32,5 +39,6 @@ def blog_single_view(request, article_id):
     article_news_three = article.objects.all().order_by('-pk', 'create_date')[:3]  # -pk為降序 這邊說明為依照建立時間去排序 限制三筆
     banner = BlogBanner.objects.first()  # banner 圖片
 
+    current_url = request.path_info
 
     return render(request, 'blog-single.html', locals())
