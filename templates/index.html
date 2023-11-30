@@ -257,7 +257,7 @@
                 </div>
 
                 <div class="row justify-content-center">
-                    {% for latest in article_news_three %}
+                    {% for latest in all_article_three %}
                         <div class="col-lg-4 col-md-6 mb-5">
                             <div class="card bg-transparent border-0">
                                 <img loading="lazy" src="{{ latest.article_photo.url }}" alt="blog"
@@ -270,10 +270,10 @@
                                     {#							<a href="#" class="text-white-50 ml-2"><i class="fa fa-user mr-2"></i>admin</a>#}
                                     {#						</div>#}
 
-                                    <h3 class="mt-3 mb-5 lh-36"><a href="{% url 'blog_single' latest.id %}"
+                                    <h3 class="mt-3 mb-5 lh-36"><a href="{% url 'blog-single' latest.id %}"
                                                                    class="text-white ">{{ latest.title }}</a></h3>
 
-                                    <a href="{% url 'blog_single' latest.id %}"
+                                    <a href="{% url 'blog-single' latest.id %}"
                                        class="btn btn-small btn-solid-border btn-round-full text-white">了解更多</a>
                                 </div>
                             </div>

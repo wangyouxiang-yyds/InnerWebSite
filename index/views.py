@@ -13,6 +13,10 @@ def homepage(request):
     banner_fourth = HomeBanner4.objects.first()
     display = RunHorseLight.objects.first()
 
+    all_article_three = article.objects.all().order_by('-pk', 'create_date')[:3]    # 找最新三筆文章
+
+
+
     current_url = request.path_info
     index_url = reverse('index')
     return render(request, 'index.html', locals())
