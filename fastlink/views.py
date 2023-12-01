@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.urls import reverse
-
+from index.models import *
 # Create your views here.
 
 def fastlinkView(request):
@@ -17,4 +17,6 @@ def fastlinkView(request):
 
     current_url = request.path_info
     fastlink_url = reverse('fastlink')
+
+    display = RunHorseLight.objects.first() # 跑馬燈的抓取
     return render(request, 'fastlink.html', locals())

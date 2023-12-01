@@ -18,7 +18,7 @@ def aboutView(request):
     third_line = introduce_data.third_line
 
     quote = Quote.objects.all()
-    display = RunHorseLight.objects.first()
+    display = RunHorseLight.objects.first() # 跑馬燈的抓取
 
 
 

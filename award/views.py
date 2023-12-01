@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.urls import reverse
-
+from index.models import *
 # Create your views here.
 
 
@@ -11,5 +11,5 @@ def awardView(request):
 
     current_url = request.path_info
     award_url = reverse('award')
-
+    display = RunHorseLight.objects.first()
     return render(request, 'award.html', locals())

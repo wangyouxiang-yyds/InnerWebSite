@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.core.mail import EmailMessage
 from django.urls import reverse
 from .models import *
-
+from index.models import *
 
 # Create your views here.
 
@@ -36,4 +36,5 @@ def contactView(request):
     current_url = request.path_info
     contact_url = reverse('contact')
 
+    display = RunHorseLight.objects.first()
     return render(request, 'contact.html', locals())

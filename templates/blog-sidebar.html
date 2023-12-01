@@ -57,9 +57,11 @@
                             <nav class="navigation pagination py-2 d-inline-block">
                                 <div class="nav-links">
                                     {% if all_article.has_previous %}
-                                        <a class="prev page-numbers" href="?page={{ all_article.previous_page_number }}">Prev</a>
+                                        <a class="prev page-numbers"
+                                           href="?page={{ all_article.previous_page_number }}">Prev</a>
                                     {% endif %}
-                                    <span aria-current="page" class="page-numbers current">{{ all_article.number }}</span>
+                                    <span aria-current="page"
+                                          class="page-numbers current">{{ all_article.number }}</span>
                                     {% if all_article.has_next %}
                                         <a class="next page-numbers"
                                            href="?page={{ all_article.next_page_number }}">Next</a>
@@ -71,13 +73,13 @@
                 </div>
                 <div class="col-lg-4 mt-5 mt-lg-0">
                     <div class="sidebar-wrap">
-                    <form action="" method="get">
-                        {% csrf_token %}
-                        <div class="sidebar-widget search card p-4 mb-3 border-0">
-                            <input type="text" class="form-control" placeholder="打點關鍵字" name="search">
-                            <button type="submit" class="btn btn-mian btn-small d-block mt-2">搜尋</button>
-                        </div>
-                    </form>
+                        <form action="" method="get">
+                            {% csrf_token %}
+                            <div class="sidebar-widget search card p-4 mb-3 border-0">
+                                <input type="text" class="form-control" placeholder="打點關鍵字" name="search">
+                                <button type="submit" class="btn btn-mian btn-small d-block mt-2">搜尋</button>
+                            </div>
+                        </form>
                         <div class="sidebar-widget card border-0 mb-3">
                             <img loading="lazy" src="{% static 'agitweb/images/blog/blog-author1.jpg' %}"
                                  alt="blog-author" class="img-fluid">
@@ -85,7 +87,7 @@
                                 <h5 class="mb-0 mt-4">Alan</h5>
                                 <p>管理部 資訊部</p>
                                 <p>有關電腦設備相關請來電281或Email:ex20@agit-global.com</p>
-{% comment %}
+                                {% comment %}
 
 
                                 <ul class="list-inline author-socials">
@@ -112,31 +114,28 @@
                         <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
                             <h5>最新文章</h5>
                             {% for latest in all_article_three %}
-                            <div class="media border-bottom py-3">
-                                <a href="{% url 'blog-single' latest.id %}"><img loading="lazy" class="mr-4"
-                                                 src="{{ latest.article_photo.url }}" alt="blog" style="width: 87px; height: 72px;"></a>
-                                <div class="media-body">
-                                    <h6 class="my-2"><a href="{% url 'blog-single' latest.id %}">{{ latest.title }}</a></h6>-
-                                    <span class="text-sm text-muted">{{ latest.create_date }}</span>
+                                <div class="media border-bottom py-3">
+                                    <a href="{% url 'blog-single' latest.id %}"><img loading="lazy" class="mr-4"
+                                                                                     src="{{ latest.article_photo.url }}"
+                                                                                     alt="blog"
+                                                                                     style="width: 87px; height: 72px;"></a>
+                                    <div class="media-body">
+                                        <h6 class="my-2"><a
+                                                href="{% url 'blog-single' latest.id %}">{{ latest.title }}</a></h6>-
+                                        <span class="text-sm text-muted">{{ latest.create_date }}</span>
+                                    </div>
                                 </div>
-                            </div>
                             {% endfor %}
 
                         </div>
-{% comment %}
-                        <div class="sidebar-widget bg-white rounded tags p-4 mb-3">
-                            <h5 class="mb-4">Tags</h5>
 
-                            <a href="#">Web</a>
-                            <a href="#">agency</a>
-                            <a href="#">company</a>
-                            <a href="#">creative</a>
-                            <a href="#">html</a>
-                            <a href="#">Marketing</a>
-                            <a href="#">Social Media</a>
-                            <a href="#">Branding</a>
+                        <div class="sidebar-widget bg-white rounded tags p-4 mb-3">
+                            <h5 class="mb-4">文章分類</h5>
+                            {% for category in all_category %}
+                                <a href="{% url 'blog-sidebar'%}?category={{ category.id }}">{{ category.article_category }}</a>
+                            {% endfor %}
                         </div>
-{% endcomment %}
+
                     </div>
                 </div>
             </div>
