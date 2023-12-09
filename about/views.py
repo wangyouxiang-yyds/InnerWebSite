@@ -17,7 +17,7 @@ def aboutView(request):
     # 內文
     third_line = introduce_data.third_line
 
-    quote = Quote.objects.all()
+    quotes = Quote.objects.all()
     display = RunHorseLight.objects.first() # 跑馬燈的抓取
 
 
